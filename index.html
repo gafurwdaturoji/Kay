@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#100b18">
+<title>Isi Hati Saril untuk Kanaya ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pink: #ff75bd;
+    --purple: #b58cff;
+    --white: #fff4fc;
+    --dark: #100b18;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(ellipse at 50% 35%, #30203c 0%, transparent 48%),
+        radial-gradient(ellipse at 10% 80%, #24152d 0%, transparent 42%),
+        linear-gradient(145deg, #17101f, #100d16 60%, #17101e);
+}
+
+/* GALAXY BACKGROUND */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow {
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .12;
+    pointer-events: none;
+}
+
+.glow.one {
+    background: #ff59b7;
+    top: 10%;
+    left: -100px;
+}
+
+.glow.two {
+    background: #9165ff;
+    right: -100px;
+    bottom: 8%;
+}
+
+/* MAIN */
+
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 35px 18px 70px;
+    text-align: center;
+}
+
+.top-label {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 1px solid #ffffff22;
+    border-radius: 50px;
+    color: #f6c9e8;
+    background: #ffffff08;
+    backdrop-filter: blur(10px);
+    font: 10px Arial, sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(29px, 7vw, 49px);
+    line-height: 1.25;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 0 0 30px #ff79c544;
+}
+
+h1 span {
+    color: #ff9fd2;
+}
+
+.subtitle {
+    margin: 13px auto 0;
+    max-width: 420px;
+    font: 13px/1.9 Arial, sans-serif;
+    color: #c5b4ca;
+}
+
+/* 3D HEART */
+
+.heart-area {
+    position: relative;
+    width: 100%;
+    height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px auto 0;
+    perspective: 1000px;
+    touch-action: pan-y;
+}
+
+.heart-halo {
+    position: absolute;
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+    background: #ff4eb7;
+    filter: blur(85px);
+    opacity: .18;
+    pointer-events: none;
+    transition: opacity .4s;
+}
+
+.heart-area:active .heart-halo {
+    opacity: .32;
+}
+
+/* Smooth heart-shaped object */
+
+.heart-ball {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    max-width: 76vw;
+    max-height: 76vw;
+    transform-style: preserve-3d;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    will-change: transform;
+    filter:
+        drop-shadow(0 20px 23px #0009)
+        drop-shadow(0 0 14px #ff65b533);
+}
+
+.heart-ball:active {
+    cursor: grabbing;
+}
+
+.heart-ball svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+/* Layered sides make the heart look thick */
+
+.heart-side {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.heart-side svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heart-front {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(19px);
+    backface-visibility: hidden;
+}
+
+.heart-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg) translateZ(19px);
+    backface-visibility: hidden;
+}
+
+.heart-edge {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(0);
+}
+
+.heart-edge svg {
+    filter: brightness(.45) saturate(.8);
+}
+
+/* Soft rounded-looking edge and glossy finish */
+
+.heart-gloss {
+    position: absolute;
+    top: 20%;
+    left: 21%;
+    width: 31%;
+    height: 13%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #fff9, #ffffff05);
+    filter: blur(5px);
+    transform: rotate(-35deg) translateZ(24px);
+    pointer-events: none;
+}
+
+.heart-shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 45%;
+    background:
+        radial-gradient(ellipse at 28% 18%, #ffffff40 0%, transparent 27%),
+        radial-gradient(ellipse at 75% 75%, #120b1a22 0%, transparent 50%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.heart-name {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(27px);
+    pointer-events: none;
+    font: bold clamp(14px, 4vw, 20px) Arial, sans-serif;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow:
+        0 2px 3px #41142f,
+        0 0 13px #ffffffaa,
+        0 0 25px #ff9bd9;
+    transition: opacity .4s;
+}
+
+.heart-name span {
+    margin-top: 18px;
+}
+
+.drag-hint {
+    margin-top: -6px;
+    color: #c5b3cb;
+    font: 11px Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.drag-hint b {
+    color: #ff9fd2;
+    font-weight: normal;
+}
+
+/* BUTTON */
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 25px 0 40px;
+}
+
+.btn {
+    border: 1px solid #ffffff20;
+    color: #fff5fc;
+    padding: 13px 21px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ffffff13, #ffffff05);
+    font: 12px Arial, sans-serif;
+    letter-spacing: .6px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:active {
+    transform: scale(.95);
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #e65ca9, #8e62c9);
+    border-color: #ffb4df55;
+    box-shadow: 0 5px 25px #d54e9c26;
+}
+
+/* STORY */
+
+.section-label {
+    color: #e9a8d0;
+    font: 10px Arial, sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.story-title {
+    font-size: clamp(25px, 6vw, 37px);
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 13px;
+}
+
+.story-title span {
+    color: #ff91cb;
+}
+
+.story-intro {
+    max-width: 570px;
+    margin: 0 auto 30px;
+    color: #c7b8ce;
+    font: 13px/2 Arial, sans-serif;
+}
+
+.story-card {
+    text-align: left;
+    margin: 15px auto;
+    padding: 24px 23px;
+    max-width: 620px;
+    border: 1px solid #ffffff12;
+    border-radius: 21px;
+    background:
+        linear-gradient(135deg, #ffffff0b, #ffffff03);
+    box-shadow: 0 15px 45px #0002;
+    backdrop-filter: blur(12px);
+    transition: transform .3s, border-color .3s;
+}
+
+.story-card:hover {
+    transform: translateY(-3px);
+    border-color: #ff91cb44;
+}
+
+.story-card h3 {
+    color: #ffadd9;
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.story-card p {
+    color: #d7cadb;
+    font: 13px/2 Arial, sans-serif;
+}
+
+.story-number {
+    display: block;
+    margin-bottom: 12px;
+    color: #ad8bc4;
+    font: 10px Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+.quote-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 28px 20px;
+    border-top: 1px solid #ffffff16;
+    border-bottom: 1px solid #ffffff16;
+}
+
+.quote-box .quote-mark {
+    font-size: 40px;
+    color: #e88ec5;
+    line-height: 1;
+}
+
+#quote {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5dcec;
+    font-size: 19px;
+    line-height: 1.8;
+    transition: opacity .3s;
+}
+
+.signature {
+    margin-top: 14px;
+    color: #ff9fd2;
+    font: 11px Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.final-card {
+    max-width: 620px;
+    margin: 40px auto 15px;
+    padding: 32px 23px;
+    border: 1px solid #ff8bc52a;
+    border-radius: 25px;
+    background:
+        radial-gradient(ellipse at top, #b3478220, transparent 70%),
+        #ffffff05;
+}
+
+.final-card h2 {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.final-card h2 span {
+    color: #ff9fd2;
+}
+
+.final-card p {
+    color: #d3c3d6;
+    font: 13px/2 Arial, sans-serif;
+}
+
+footer {
+    padding: 35px 10px 0;
+    color: #95869d;
+    font: 10px/2 Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* HEART PARTICLES */
+
+.particle {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    animation: particleFly 1.5s ease-out forwards;
+    filter: drop-shadow(0 0 6px #ff70c5aa);
+}
+
+@keyframes particleFly {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.3) rotate(0deg);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform:
+            translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
+            scale(var(--s))
+            rotate(var(--r));
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        padding: 28px 15px 55px;
+    }
+
+    .heart-area {
+        height: 340px;
+    }
+
+    .heart-ball {
+        width: 250px;
+        height: 250px;
+        max-width: 74vw;
+        max-height: 74vw;
+    }
+
+    .story-card {
+        padding: 21px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+    }
+}
+
+/* FITUR SARIL x KANAYA 1-9 */
+.new-features { margin: 34px auto; max-width: 650px; }
+.feature-panel {
+  margin: 16px auto; padding: 22px 18px; text-align: left;
+  border: 1px solid #ff9fd233; border-radius: 22px;
+  background: linear-gradient(135deg,#ffffff0c,#ffffff04);
+  box-shadow: 0 12px 35px #0002; backdrop-filter: blur(10px);
+}
+.feature-panel h3 { color:#ffadd9; font-size:21px; font-weight:normal; margin-bottom:10px; }
+.feature-panel p, .feature-panel label { color:#d7cadb; font:13px/1.9 Arial,sans-serif; }
+.feature-actions { display:flex; flex-wrap:wrap; gap:9px; margin-top:14px; }
+.feature-actions .btn { flex: 0 1 auto; }
+.feature-input, .feature-select {
+  width:100%; margin-top:8px; padding:12px; border-radius:12px;
+  border:1px solid #ffffff25; background:#1c1425; color:#fff4fc; font:13px Arial,sans-serif;
+}
+.feature-result {
+  display:none; margin-top:14px; padding:14px; border-radius:14px;
+  background:#ff8bc515; border:1px solid #ff8bc533; color:#ffe8f6;
+  font:13px/1.9 Arial,sans-serif; white-space:pre-line;
+}
+.feature-result.show { display:block; animation: featurePop .35s ease; }
+@keyframes featurePop { from {opacity:0;transform:translateY(8px) scale(.98)} to {opacity:1;transform:none} }
+#nightToggle { position:fixed; right:12px; top:12px; z-index:30; }
+body.night-mode { --dark:#070b20; background:radial-gradient(ellipse at 50% 15%,#202c58 0%,transparent 50%),linear-gradient(145deg,#080b20,#101329 65%,#090a19); }
+body.night-mode .glow.one { background:#9aabff; }
+body.night-mode .glow.two { background:#bb8cff; }
+body.night-mode .heart-halo { background:#a9a6ff; }
+.heart-rain { position:fixed; top:-35px; z-index:25; pointer-events:none; animation:heartRain linear forwards; }
+@keyframes heartRain { to { transform:translateY(110vh) rotate(360deg); opacity:0; } }
+.feature-modal {
+  position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center;
+  padding:20px; background:#090510d9; backdrop-filter:blur(10px);
+}
+.feature-modal.open { display:flex; }
+.modal-card {
+  width:min(100%,480px); max-height:85vh; overflow:auto; padding:27px 22px;
+  border:1px solid #ff9fd255; border-radius:24px;
+  background:linear-gradient(145deg,#2b1936,#120d1d); color:#fff4fc; text-align:center;
+  box-shadow:0 20px 80px #0009;
+}
+.modal-card h2 { color:#ffadd9; font-weight:normal; margin-bottom:14px; }
+.modal-card p { color:#e5d4e5; font:14px/2 Arial,sans-serif; white-space:pre-line; }
+.modal-close { margin-top:18px; }
+.chat-line { display:flex; margin:10px 0; }
+.chat-line span { display:inline-block; max-width:90%; padding:12px 14px; border-radius:15px; font:13px/1.8 Arial,sans-serif; }
+.chat-saril { justify-content:flex-start; } .chat-saril span { background:#8f4d86; border-bottom-left-radius:4px; }
+.chat-kanaya { justify-content:flex-end; } .chat-kanaya span { background:#654b9b; border-bottom-right-radius:4px; }
+@media(max-width:500px) { #nightToggle { top:8px; right:8px; padding:10px 12px; } .feature-panel { padding:19px 15px; } }
+
+</style>
+</head>
+
+<body>
+<canvas id="stars"></canvas>
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<main>
+    <div class="top-label">A LITTLE PIECE OF MY HEART</div>
+
+    <h1>Untuk <span>Kanaya</span>,<br>dari hati Saril.</h1>
+
+    <p class="subtitle">
+        Ada perasaan yang tidak selalu bisa dijelaskan,
+        tetapi selalu punya alasan untuk bertahan.
+    </p>
+
+    <section class="heart-area" id="heartArea">
+        <div class="heart-halo"></div>
+
+        <div class="heart-ball" id="heartBall" aria-label="Love 3D yang dapat diputar dengan jari">
+            <div class="heart-side heart-edge">
+                <svg viewBox="0 0 300 300" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#ffb1df"/>
+                            <stop offset=".5" stop-color="#a52e79"/>
+                            <stop offset="1" stop-color="#17101e"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M150 263
+                    C132 247 33 181 23 112
+                    C14 52 85 24 126 65
+                    C137 76 145 89 150 99
+                    C155 89 163 76 174 65
+                    C215 24 286 52 277 112
+                    C267 181 168 247 150 263Z"
+                    fill="url(#edgeGrad)"
+                    stroke="#120b18"
+                    stroke-width="8"
+                    stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div class="heart-front">
+                <svg viewBox="0 0 300 300" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="heartGrad" x1="0" y1="0" x2=".9" y2="1">
+                            <stop offset="0" stop-color="#ffb8e2"/>
+                            <stop offset=".22" stop-color="#fa82c8"/>
+                            <stop offset=".52" stop-color="#df4caa"/>
+                            <stop offset=".78" stop-color="#a52b83"/>
+                            <stop offset="1" stop-color="#51204f"/>
+                        </linearGradient>
+                        <radialGradient id="heartLight" cx=".27" cy=".18" r=".78">
+                            <stop offset="0" stop-color="#fff" stop-opacity=".48"/>
+                            <stop offset=".45" stop-color="#fff" stop-opacity=".07"/>
+                            <stop offset="1" stop-color="#080510" stop-opacity=".27"/>
+                        </radialGradient>
+                    </defs>
+
+                    <path d="M150 263
+                    C132 247 33 181 23 112
+                    C14 52 85 24 126 65
+                    C137 76 145 89 150 99
+                    C155 89 163 76 174 65
+                    C215 24 286 52 277 112
+                    C267 181 168 247 150 263Z"
+                    fill="url(#heartGrad)"
+                    stroke="#211323"
+                    stroke-width="9"
+                    stroke-linejoin="round"/>
+
+                    <path d="M150 263
+                    C132 247 33 181 23 112
+                    C14 52 85 24 126 65
+                    C137 76 145 89 150 99
+                    C155 89 163 76 174 65
+                    C215 24 286 52 277 112
+                    C267 181 168 247 150 263Z"
+                    fill="url(#heartLight)"/>
+
+                    <path d="M56 91 C55 70 78 54 99 63"
+                    fill="none" stroke="#fff" stroke-opacity=".55"
+                    stroke-width="5" stroke-linecap="round"/>
+
+                    <path d="M44 113 C44 105 46 100 49 96"
+                    fill="none" stroke="#fff" stroke-opacity=".28"
+                    stroke-width="3" stroke-linecap="round"/>
+
+                    <ellipse cx="202" cy="211" rx="25" ry="8"
+                    fill="#170b1e" opacity=".12"
+                    transform="rotate(-35 202 211)"/>
+                </svg>
+            </div>
+
+            <div class="heart-back">
+                <svg viewBox="0 0 300 300" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="backGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#ffb5df"/>
+                            <stop offset=".5" stop-color="#b63b94"/>
+                            <stop offset="1" stop-color="#51204f"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M150 263
+                    C132 247 33 181 23 112
+                    C14 52 85 24 126 65
+                    C137 76 145 89 150 99
+                    C155 89 163 76 174 65
+                    C215 24 286 52 277 112
+                    C267 181 168 247 150 263Z"
+                    fill="url(#backGrad)"
+                    stroke="#211323"
+                    stroke-width="9"
+                    stroke-linejoin="round"/>
+                    <path d="M150 263
+                    C132 247 33 181 23 112
+                    C14 52 85 24 126 65
+                    C137 76 145 89 150 99
+                    C155 89 163 76 174 65
+                    C215 24 286 52 277 112
+                    C267 181 168 247 150 263Z"
+                    fill="#fff" opacity=".05"/>
+                </svg>
+            </div>
+
+            <div class="heart-gloss"></div>
+            <div class="heart-shine"></div>
+
+            <div class="heart-name" id="heartName">
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <p class="drag-hint">
+        <b>✦</b> Sentuh lalu geser untuk memutar love <b>✦</b>
+    </p>
+
+    <div class="button-row">
+        <button class="btn primary" id="nameBtn">Buka Isi Hati ♡</button>
+        <button class="btn" id="spinBtn">Putar Love ✧</button>
+        <button class="btn" id="heartBtn">Sebarkan Cinta ♡</button>
+    </div>
+
+    <section>
+        <p class="section-label">A LETTER FROM SARIL</p>
+        <h2 class="story-title">Tentang aku,<br>dan <span>kamu, Kanaya.</span></h2>
+
+        <p class="story-intro">
+            Ini bukan tentang kata-kata yang sempurna.
+            Ini tentang perasaan sederhana yang tumbuh diam-diam
+            dan menemukan tempatnya di dalam hati.
+        </p>
+
+        <article class="story-card">
+            <span class="story-number">01 — AWAL CERITA</span>
+            <h3>Entah sejak kapan</h3>
+            <p>
+                Kanaya, aku tidak tahu tepatnya sejak kapan kamu mulai
+                punya tempat yang berbeda di pikiranku. Yang aku tahu,
+                ada hal-hal sederhana tentangmu yang tanpa sadar membuatku
+                tersenyum. Kadang cuma mengingatmu sebentar saja sudah
+                cukup untuk mengubah suasana hariku.
+            </p>
+        </article>
+
+        <article class="story-card">
+            <span class="story-number">02 — YANG KURASAKAN</span>
+            <h3>Ada namamu di sela pikiranku</h3>
+            <p>
+                Aku mungkin tidak selalu pandai mengungkapkan isi hati.
+                Ada banyak kalimat yang hanya kusimpan sendiri karena
+                takut kata-kataku tidak mampu mewakili perasaan ini.
+                Tapi kalau ada satu hal yang ingin kamu tahu, itu adalah
+                bahwa kehadiranmu berarti bagiku, lebih dari yang bisa
+                kujelaskan lewat pesan singkat.
+            </p>
+        </article>
+
+        <article class="story-card">
+            <span class="story-number">03 — TANPA MEMAKSA</span>
+            <h3>Aku ingin mengenalmu lebih jauh</h3>
+            <p>
+                Aku tidak ingin memaksamu merasakan hal yang sama.
+                Perasaan bukan sesuatu yang bisa diminta atau dipaksa.
+                Aku hanya ingin punya kesempatan untuk mengenalmu,
+                mendengar ceritamu, memahami hal-hal kecil tentangmu,
+                dan menjadi seseorang yang bisa membuatmu nyaman
+                saat kamu ingin berbagi cerita.
+            </p>
+        </article>
+
+        <article class="story-card">
+            <span class="story-number">04 — HAL KECIL YANG BERARTI</span>
+            <h3>Kamu tidak harus selalu sempurna</h3>
+            <p>
+                Aku tidak berharap kamu selalu tersenyum atau selalu
+                terlihat baik-baik saja. Setiap orang punya hari yang
+                melelahkan dan pikiran yang tidak mudah diceritakan.
+                Kalau suatu hari kamu ingin bercerita, aku ingin
+                mendengarkan tanpa buru-buru menghakimi.
+                Bagiku, menjadi diri sendiri sudah cukup berharga.
+            </p>
+        </article>
+
+        <article class="story-card">
+            <span class="story-number">05 — HARAPAN SARIL</span>
+            <h3>Semoga kita punya cerita yang baik</h3>
+            <p>
+                Aku tidak tahu bagaimana cerita ini akan berjalan.
+                Aku tidak bisa menjanjikan bahwa semuanya akan selalu
+                mudah. Tapi aku berharap, apa pun akhirnya nanti,
+                kita bisa saling menghargai, jujur, dan menjaga
+                perasaan satu sama lain. Kalau ternyata kita bisa
+                melangkah lebih dekat, aku akan mensyukurinya.
+            </p>
+        </article>
+    </section>
+
+    <section class="quote-box">
+        <div class="quote-mark">“</div>
+        <p id="quote">
+            Aku tidak butuh seribu alasan untuk mengingatmu;
+            terkadang satu nama saja sudah cukup.
+        </p>
+        <div class="signature">— SARIL, UNTUK KANAYA</div>
+        <div class="button-row">
+            <button class="btn" id="quoteBtn">Kata Hati Berikutnya ↗</button>
+        </div>
+    </section>
+
+    <section class="final-card">
+        <h2>Untukmu, <span>Kanaya ♡</span></h2>
+        <p>
+            Kalau suatu saat kamu membaca ini, semoga kamu tahu:
+            ada seseorang bernama Saril yang pernah menyusun kata-kata
+            ini dengan tulus hanya untukmu. Bukan supaya kamu merasa
+            berutang perasaan, bukan pula supaya kamu harus menjawab
+            dengan cara tertentu. Hanya ingin kamu tahu bahwa kamu
+            pernah menjadi alasan indah di balik cerita sederhana ini.
+        </p>
+        <br>
+        <p>
+            <strong style="color:#ffacd8;font-weight:normal">
+                Apa pun jawabanmu, semoga kamu selalu menemukan
+                kebahagiaan yang pantas kamu dapatkan.
+            </strong>
+        </p>
+    </section>
+
+
+    <section class="new-features" id="fiturBaru">
+      <p class="section-label">OUR LITTLE UNIVERSE</p>
+      <h2 class="story-title">Hal kecil <span>untuk kita ♡</span></h2>
+      <p class="story-intro">Sembilan fitur kecil untuk menemani cerita Saril dan Kanaya, meski sedang berjauhan.</p>
+
+      <article class="feature-panel">
+        <h3>💌 1. Surat Cinta Rahasia</h3>
+        <p>Surat kecil dari Saril, khusus untuk Kanaya.</p>
+        <div class="feature-actions"><button class="btn primary" id="openLetter">Buka surat rahasia ♡</button></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>🫂 2. Peluk Aku</h3>
+        <p>Pelukan virtual untuk hari yang melelahkan atau saat sedang saling merindukan.</p>
+        <div class="feature-actions"><button class="btn primary" id="hugBtn">Kirim pelukan 🤍</button></div>
+        <div class="feature-result" id="hugResult"></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>💕 3. Kuis Kecocokan</h3>
+        <p>Jawab kuis ringan ini untuk seru-seruan. Hasilnya hanya hiburan, bukan ukuran pasti hubungan.</p>
+        <label for="quiz1">Kalau salah satu sedang sibuk, apa yang paling membantu?</label>
+        <select class="feature-select" id="quiz1"><option value="">Pilih jawaban</option><option value="2">Memberi kabar dan menjelaskan dengan jujur</option><option value="1">Menunggu tanpa komunikasi</option><option value="2">Menyepakati waktu untuk ngobrol nanti</option></select>
+        <label for="quiz2" style="display:block;margin-top:12px">Apa yang paling penting dalam LDR?</label>
+        <select class="feature-select" id="quiz2"><option value="">Pilih jawaban</option><option value="2">Kepercayaan dan komunikasi</option><option value="1">Harus selalu online setiap saat</option><option value="2">Saling menghargai kesibukan</option></select>
+        <div class="feature-actions"><button class="btn primary" id="quizBtn">Lihat hasil 💗</button></div>
+        <div class="feature-result" id="quizResult"></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>🌙 4. Mode Malam</h3>
+        <p>Ubah suasana halaman jadi langit malam yang lebih tenang.</p>
+        <div class="feature-actions"><button class="btn" id="nightBtn">Aktifkan mode malam 🌙</button><button class="btn" id="rainBtn">Hujan hati ✨</button></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>📅 5. Penghitung Hari Jadian</h3>
+        <p>Pilih tanggal kalian mulai resmi bersama. Tanggalnya disimpan di browser perangkat ini.</p>
+        <label for="anniversaryDate">Tanggal jadian</label>
+        <input class="feature-input" type="date" id="anniversaryDate">
+        <div class="feature-result show" id="daysTogether">Pilih tanggal jadian untuk mulai menghitung hari bersama.</div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>🎁 6. Kotak Kejutan</h3>
+        <p>Ada pesan kecil menunggu di dalam kotak ini.</p>
+        <div class="feature-actions"><button class="btn primary" id="giftBtn">Buka hadiah 🎁</button></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>🎵 7. Musik Romantis</h3>
+        <p>Musik nada lembut dibuat langsung di browser. Tekan tombol untuk mulai atau berhenti.</p>
+        <div class="feature-actions"><button class="btn" id="musicBtn">♫ Putar musik lembut</button></div>
+        <div class="feature-result" id="musicResult"></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>🥹 8. Mode Kangen Berat</h3>
+        <p>Untuk saat jarak terasa panjang dan ingin mengingat alasan kalian tetap berusaha.</p>
+        <div class="feature-actions"><button class="btn primary" id="missBtn">Aku lagi kangen 🥺</button></div>
+      </article>
+
+      <article class="feature-panel">
+        <h3>💬 9. Pesan Bergantian</h3>
+        <p>Contoh percakapan manis yang bisa kalian baca bersama.</p>
+        <div id="chatBox">
+          <div class="chat-line chat-saril"><span>Saril: Jarak memang bikin kita belum bisa bertemu kapan saja, tapi aku senang kalau kita tetap saling berkabar.</span></div>
+          <div class="chat-line chat-kanaya"><span>Kanaya: Kita jalanin pelan-pelan ya. Yang penting jujur dan saling percaya.</span></div>
+        </div>
+        <div class="feature-actions"><button class="btn" id="nextChatBtn">Pesan berikutnya ↗</button></div>
+      </article>
+    </section>
+
+    <button class="btn" id="nightToggle" aria-label="Ganti mode tampilan">🌙</button>
+
+    <div class="feature-modal" id="featureModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-card">
+        <h2 id="modalTitle">Untuk Kanaya ♡</h2>
+        <p id="modalText"></p>
+        <button class="btn primary modal-close" id="modalClose">Tutup dengan cinta ♡</button>
+      </div>
+    </div>
+
+    <footer>
+        MADE WITH A LITTLE COURAGE AND A LOT OF FEELING<br>
+        <span style="color:#ff9fd2">SARIL ♡ KANAYA</span>
+    </footer>
+</main>
+
+<script>
+/* STAR GALAXY */
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let stars = [];
+
+function resizeStars() {
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+
+    stars = Array.from({ length: Math.min(150, Math.floor(window.innerWidth / 3)) }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        r: Math.random() * 1.3 + .2,
+        a: Math.random() * .6 + .15,
+        speed: Math.random() * .01 + .003
+    }));
+}
+
+function drawStars() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    for (const s of stars) {
+        s.a += Math.sin(Date.now() * s.speed) * .002;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,225,248,${Math.max(.1, Math.min(.8, s.a))})`;
+        ctx.fill();
+    }
+
+    requestAnimationFrame(drawStars);
+}
+
+resizeStars();
+drawStars();
+window.addEventListener("resize", resizeStars);
+
+/* HEART ROTATION BY FINGER OR MOUSE */
+const ball = document.getElementById("heartBall");
+const heartArea = document.getElementById("heartArea");
+
+let rotX = -8;
+let rotY = -15;
+let targetX = rotX;
+let targetY = rotY;
+let dragging = false;
+let lastX = 0;
+let lastY = 0;
+let moved = false;
+let autoSpin = true;
+let lastTap = 0;
+
+function renderHeart() {
+    if (!dragging && autoSpin) {
+        targetY += 0.12;
+    }
+
+    rotX += (targetX - rotX) * .15;
+    rotY += (targetY - rotY) * .15;
+
+    ball.style.transform =
+        `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+    requestAnimationFrame(renderHeart);
+}
+
+renderHeart();
+
+ball.addEventListener("pointerdown", e => {
+    dragging = true;
+    moved = false;
+    lastX = e.clientX;
+    lastY = e.clientY;
+    autoSpin = false;
+
+    ball.setPointerCapture(e.pointerId);
+});
+
+ball.addEventListener("pointermove", e => {
+    if (!dragging) return;
+
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+
+    if (Math.abs(dx) + Math.abs(dy) > 1) moved = true;
+
+    targetY += dx * .85;
+    targetX -= dy * .85;
+    targetX = Math.max(-360, Math.min(360, targetX));
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+
+    if (Math.random() > .45) {
+        makeParticle(e.clientX, e.clientY, 1);
+    }
+});
+
+function stopDragging() {
+    dragging = false;
+    setTimeout(() => {
+        autoSpin = true;
+    }, 1800);
+}
+
+ball.addEventListener("pointerup", stopDragging);
+ball.addEventListener("pointercancel", stopDragging);
+ball.addEventListener("lostpointercapture", () => {
+    dragging = false;
+});
+
+/* REVEAL NAMES ALTERNATELY */
+let nameCount = 0;
+const heartName = document.getElementById("heartName");
+const nameSpan = heartName.querySelector("span");
+
+document.getElementById("nameBtn").addEventListener("click", () => {
+    nameCount++;
+
+    nameSpan.textContent = nameCount % 2 === 1 ? "KANAYA" : "SYAHRIL";
+    heartName.style.opacity = "1";
+
+    targetY += 180;
+    burstHeart(window.innerWidth / 2, window.innerHeight * .4, 16);
+});
+
+heartName.style.opacity = "0";
+
+/* ROTATE BUTTON */
+document.getElementById("spinBtn").addEventListener("click", () => {
+    targetY += 360;
+    targetX += 90;
+    autoSpin = true;
+
+    burstHeart(window.innerWidth / 2, window.innerHeight * .4, 12);
+});
+
+/* PARTICLES */
+const symbols = ["♡", "♥", "✧", "✦", "♥"];
+
+function makeParticle(x, y, amount = 1) {
+    for (let i = 0; i < amount; i++) {
+        const p = document.createElement("span");
+        p.className = "particle";
+        p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+        p.style.left = x + "px";
+        p.style.top = y + "px";
+        p.style.color = Math.random() > .5 ? "#ff9fd2" : "#e0b5ff";
+        p.style.fontSize = (12 + Math.random() * 18) + "px";
+        p.style.setProperty("--x", (Math.random() * 180 - 90) + "px");
+        p.style.setProperty("--y", (-35 - Math.random() * 150) + "px");
+        p.style.setProperty("--s", (.5 + Math.random() * 1.2));
+        p.style.setProperty("--r", (Math.random() * 160 - 80) + "deg");
+
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 1600);
+    }
+}
+
+function burstHeart(x, y, amount = 20) {
+    makeParticle(x, y, amount);
+}
+
+document.getElementById("heartBtn").addEventListener("click", () => {
+    burstHeart(window.innerWidth / 2, window.innerHeight * .4, 32);
+});
+
+document.addEventListener("pointerdown", e => {
+    if (e.target.closest("button")) return;
+    if (e.target.closest("#heartBall")) return;
+
+    makeParticle(e.clientX, e.clientY, 3);
+});
+
+/* HEARTFELT QUOTES */
+const quotes = [
+    "Aku tidak butuh seribu alasan untuk mengingatmu; terkadang satu nama saja sudah cukup.",
+    "Namamu sederhana, tetapi perasaan yang muncul saat mengingatmu tidak sesederhana itu.",
+    "Aku tidak ingin menjadi alasan kamu harus tinggal, aku hanya berharap menjadi seseorang yang nyaman untuk kamu kenal.",
+    "Ada hal yang belum berani kuucapkan, tetapi diamku tidak berarti aku tidak punya perasaan.",
+    "Kalau suatu hari kita semakin dekat, semoga itu karena kita sama-sama nyaman, bukan karena paksaan.",
+    "Aku tidak bisa menjanjikan kisah yang sempurna, tetapi aku ingin selalu belajar menghargai perasaanmu.",
+    "Di antara banyak hal yang kupikirkan, terkadang ada kamu yang hadir tanpa diminta.",
+    "Kanaya, semoga suatu hari kamu mengerti bahwa tulisan ini dibuat dengan hati, bukan sekadar kata-kata."
+];
+
+let quoteIndex = 0;
+const quoteElement = document.getElementById("quote");
+
+document.getElementById("quoteBtn").addEventListener("click", () => {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    quoteElement.style.opacity = "0";
+
+    setTimeout(() => {
+        quoteElement.textContent = quotes[quoteIndex];
+        quoteElement.style.opacity = "1";
+    }, 250);
+
+    burstHeart(window.innerWidth / 2, window.innerHeight * .7, 8);
+});
+
+/* GENTLE ENTRANCE */
+document.querySelectorAll(".story-card").forEach((card, i) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(18px)";
+    card.style.transition =
+        `opacity .7s ease ${i * .08}s, transform .7s ease ${i * .08}s, border-color .3s`;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+                observer.disconnect();
+            }
+        });
+    }, { threshold: .1 });
+
+    observer.observe(card);
+});
+
+/* INTERAKTIF SARIL x KANAYA 1-9 */
+(() => {
+  const $ = id => document.getElementById(id);
+  const modal = $("featureModal"), modalTitle = $("modalTitle"), modalText = $("modalText");
+  function showModal(title, message) {
+    modalTitle.textContent = title;
+    modalText.textContent = message;
+    modal.classList.add("open");
+  }
+  function closeModal() { modal.classList.remove("open"); }
+  $("modalClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+  $("openLetter").addEventListener("click", () => showModal("💌 Surat kecil untuk Kanaya",
+`Kanaya sayang,
+
+Kalau hari ini terasa panjang, semoga kamu ingat bahwa kamu tidak harus melewati semuanya dengan senyum setiap waktu. Kamu boleh lelah, boleh bercerita, dan boleh meminta waktu untuk diri sendiri.
+
+Walaupun kita menjalani hubungan dari jauh, aku ingin kita tetap belajar saling mendengar, jujur tentang apa yang dirasakan, dan tidak membiarkan salah paham tumbuh karena diam terlalu lama.
+
+Aku tidak ingin menjanjikan hal yang belum bisa kupastikan. Aku ingin menunjukkan rasa sayang lewat usaha kecil yang konsisten, menghargai waktumu, dan menjaga kepercayaan yang kita bangun bersama.
+
+Semoga suatu hari nanti, jarak ini menjadi bagian dari cerita yang kita kenang sambil tersenyum.
+
+Dari Saril, untuk Kanaya ♡`));
+
+  $("hugBtn").addEventListener("click", () => {
+    const r = $("hugResult");
+    r.textContent = "🫂 Peluk virtual terkirim! Tarik napas pelan, istirahat sebentar, dan ingat: kamu layak diperlakukan dengan lembut. — Saril ♡";
+    r.classList.add("show");
+    for (let i=0;i<22;i++) setTimeout(() => {
+      const p = document.createElement("span"); p.className="heart-rain"; p.textContent=["♡","♥","✧"][i%3];
+      p.style.left=(Math.random()*100)+"vw"; p.style.fontSize=(16+Math.random()*20)+"px";
+      p.style.color=i%2?"#ff9fd2":"#d4b4ff"; p.style.animationDuration=(3+Math.random()*3)+"s";
+      document.body.appendChild(p); setTimeout(()=>p.remove(),6500);
+    }, i*80);
+  });
+
+  $("quizBtn").addEventListener("click", () => {
+    const a = $("quiz1").value, b = $("quiz2").value, r = $("quizResult");
+    if (!a || !b) { r.textContent = "Pilih jawaban untuk kedua pertanyaan dulu, ya."; r.classList.add("show"); return; }
+    const score = Number(a)+Number(b);
+    r.textContent = score >= 4
+      ? "💗 Jawaban kalian mengarah ke kebiasaan yang sehat: komunikasi, kejujuran, dan saling menghargai. Terus rawat itu bersama."
+      : "💞 Ini pengingat untuk terus belajar memahami kebutuhan masing-masing. Hubungan yang baik tumbuh dari obrolan jujur dan usaha dua arah.";
+    r.classList.add("show");
+  });
+
+  function toggleNight() {
+    document.body.classList.toggle("night-mode");
+    const on = document.body.classList.contains("night-mode");
+    $("nightBtn").textContent = on ? "Matikan mode malam ☀️" : "Aktifkan mode malam 🌙";
+    $("nightToggle").textContent = on ? "☀️" : "🌙";
+    try { localStorage.setItem("sk-night", on ? "1" : "0"); } catch(e) {}
+  }
+  $("nightBtn").addEventListener("click", toggleNight);
+  $("nightToggle").addEventListener("click", toggleNight);
+  try { if (localStorage.getItem("sk-night")==="1") document.body.classList.add("night-mode"); } catch(e) {}
+
+  $("rainBtn").addEventListener("click", () => {
+    for (let i=0;i<38;i++) setTimeout(() => {
+      const h=document.createElement("span"); h.className="heart-rain"; h.textContent=["♡","♥","✦","💗"][i%4];
+      h.style.left=Math.random()*100+"vw"; h.style.fontSize=(14+Math.random()*18)+"px";
+      h.style.color=i%2?"#ff9fd2":"#d4b4ff"; h.style.animationDuration=(3+Math.random()*4)+"s";
+      document.body.appendChild(h); setTimeout(()=>h.remove(),7500);
+    },i*70);
+  });
+
+  const dateInput = $("anniversaryDate"), dayOutput = $("daysTogether");
+  try { dateInput.value = localStorage.getItem("sk-anniversary") || ""; } catch(e) {}
+  function updateDays() {
+    if (!dateInput.value) { dayOutput.textContent="Pilih tanggal jadian untuk mulai menghitung hari bersama."; return; }
+    const start = new Date(dateInput.value+"T00:00:00");
+    const now = new Date(); const today = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    const diff = Math.floor((today-start)/86400000);
+    if (Number.isNaN(diff)) { dayOutput.textContent="Tanggal belum terbaca. Pilih tanggal lagi."; return; }
+    if (diff < 0) { dayOutput.textContent="Tanggal itu masih di masa depan. Coba periksa lagi ya."; return; }
+    dayOutput.textContent = `💗 Kalian sudah bersama selama ${diff+1} hari sejak ${start.toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"})}. Semoga terus saling menghargai dan tumbuh bersama.`;
+    try { localStorage.setItem("sk-anniversary",dateInput.value); } catch(e) {}
+  }
+  dateInput.addEventListener("change", updateDays); updateDays();
+
+  $("giftBtn").addEventListener("click", () => showModal("🎁 Hadiah kecil untuk Kanaya",
+`Hadiah ini bukan barang mahal. Isinya adalah harapan sederhana:
+
+Semoga kamu selalu punya ruang untuk menjadi dirimu sendiri.
+Semoga kita bisa berbicara jujur saat ada yang mengganggu hati.
+Semoga jarak tidak membuat kita lupa menghargai usaha satu sama lain.
+Dan semoga saat kita akhirnya bertemu, kita bisa tersenyum karena sudah saling berusaha dengan baik.
+
+Kamu berharga, Kanaya. Jangan lupa juga menyayangi dirimu sendiri. ♡`));
+
+  let audioCtx=null, oscillators=[], musicOn=false, musicTimer=null;
+  const notes=[261.63,329.63,392.00,329.63,293.66,349.23,440.00,349.23];
+  function playNote() {
+    if (!audioCtx || !musicOn) return;
+    const freq=notes[Math.floor(Math.random()*notes.length)];
+    const osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+    osc.type="sine"; osc.frequency.value=freq; gain.gain.setValueAtTime(.0001,audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.035,audioCtx.currentTime+.08);
+    gain.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.65);
+    osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime+.7);
+  }
+  $("musicBtn").addEventListener("click", async () => {
+    if (!musicOn) {
+      const AC=window.AudioContext||window.webkitAudioContext;
+      if (!AC) { $("musicResult").textContent="Browser ini tidak mendukung audio sintetis."; $("musicResult").classList.add("show"); return; }
+      audioCtx=audioCtx||new AC(); if (audioCtx.state==="suspended") await audioCtx.resume();
+      musicOn=true; playNote(); musicTimer=setInterval(playNote,650);
+      $("musicBtn").textContent="♫ Hentikan musik"; $("musicResult").textContent="Musik nada lembut sedang diputar. Ini melodi sintetis, bukan lagu rekaman.";
+    } else {
+      musicOn=false; clearInterval(musicTimer); $("musicBtn").textContent="♫ Putar musik lembut";
+      $("musicResult").textContent="Musik dihentikan.";
+    }
+    $("musicResult").classList.add("show");
+  });
+
+  $("missBtn").addEventListener("click", () => showModal("🥹 Saat Saril kangen Kanaya",
+`Kanaya, kadang yang paling dirindukan bukan hanya pertemuan, tapi hal-hal sederhana: cerita tentang harimu, suara yang menenangkan, tawa kecil, dan rasa dekat walaupun kita berada di tempat berbeda.
+
+Aku ingin kita tetap punya kehidupan masing-masing, mengejar hal yang penting, dan tetap memberi kabar dengan tulus. Kita tidak harus selalu online setiap saat untuk membuktikan sayang. Yang penting, kita berusaha saling jujur, menjaga kepercayaan, dan membicarakan hal yang mengganggu daripada menebak-nebak sendiri.
+
+Kalau hari ini kita belum bisa bertemu, semoga komunikasi yang baik bisa membuat jarak terasa sedikit lebih ringan. Pelan-pelan saja, ya. Semoga saat waktunya tepat, kita bisa membuat kenangan yang baik bersama.
+
+Dari Saril, yang sedang mengirim rindu lewat kata-kata. ♡`));
+
+  const chats = [
+    ["Saril: Hari ini kamu gimana? Kalau capek, cerita aja kalau kamu nyaman.","Kanaya: Makasih ya. Aku senang kalau kita bisa saling dengar tanpa menghakimi."],
+    ["Saril: Kalau kita lagi sibuk, ayo saling kasih kabar dan tentukan waktu ngobrol.","Kanaya: Setuju. Kita tetap punya kegiatan masing-masing, tapi tetap saling menghargai."],
+    ["Saril: Aku ingin kita jujur kalau ada yang bikin kepikiran, bukan saling menebak.","Kanaya: Kita belajar bareng ya. Nggak harus sempurna, yang penting mau memperbaiki."],
+    ["Saril: Semoga suatu hari kita bisa ketemu dan mengenang usaha kita hari ini.","Kanaya: Aamiin. Kita jalani pelan-pelan, dengan rasa percaya dan komunikasi."]
+  ];
+  let chatIndex=0;
+  $("nextChatBtn").addEventListener("click", () => {
+    chatIndex=(chatIndex+1)%chats.length;
+    $("chatBox").innerHTML="";
+    chats[chatIndex].forEach((msg,i)=>{
+      const row=document.createElement("div"); row.className="chat-line "+(i===0?"chat-saril":"chat-kanaya");
+      const bubble=document.createElement("span"); bubble.textContent=msg; row.appendChild(bubble); $("chatBox").appendChild(row);
+    });
+  });
+})();
+
+</script>
+</body>
+</html>
