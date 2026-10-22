@@ -638,79 +638,40 @@ body {
 
 
 <style id="galaxy-intro-styles">
-/* INTRO GALAXY — primera pantalla inspirada en el video */
-html.intro-lock, html.intro-lock body { overflow: hidden !important; }
-#galaxy-intro {
-  position: fixed; inset: 0; z-index: 20000; display: grid; place-items: center;
-  overflow: hidden; isolation: isolate; padding: 24px 18px;
-  color: #fff5fc; text-align: center; background: #030207;
-  transition: opacity .9s ease, visibility .9s ease;
-}
-#galaxy-intro::before {
-  content:""; position:absolute; inset:-20%; z-index:-2;
-  background:
-    radial-gradient(ellipse at 50% 57%, rgba(255,36,157,.2), transparent 23%),
-    radial-gradient(ellipse at 50% 50%, rgba(108,38,170,.16), transparent 42%),
-    radial-gradient(ellipse at 20% 20%, rgba(43,49,116,.16), transparent 30%);
-  animation: introNebula 9s ease-in-out infinite alternate;
-}
-#galaxy-intro::after {
-  content:""; position:absolute; inset:0; z-index:-1; opacity:.75;
-  background-image: radial-gradient(1px 1px at 8% 18%,#fff 99%,transparent),
-    radial-gradient(2px 2px at 22% 76%,#ff8fcf 99%,transparent),
-    radial-gradient(1px 1px at 75% 12%,#fff 99%,transparent),
-    radial-gradient(1px 1px at 88% 68%,#d7b6ff 99%,transparent),
-    radial-gradient(2px 2px at 64% 82%,#fff 99%,transparent),
-    radial-gradient(1px 1px at 42% 31%,#ffc4e7 99%,transparent),
-    radial-gradient(1px 1px at 14% 54%,#fff 99%,transparent),
-    radial-gradient(1px 1px at 93% 35%,#fff 99%,transparent);
-  background-size: 230px 240px; animation: introStars 24s linear infinite;
-}
-#galaxy-intro.intro-leave { opacity:0; visibility:hidden; pointer-events:none; }
-.intro-content { width:min(100%,520px); position:relative; z-index:2; }
-.intro-kicker { font:10px/1.8 Arial,sans-serif; letter-spacing:5px; color:#ffb9e0; text-transform:uppercase; }
-.intro-title { margin:17px 0 8px; font:normal clamp(30px,8vw,53px)/1.16 Georgia,serif; text-shadow:0 0 24px #ff4fa877; }
-.intro-title span { color:#ff86c6; }
-.intro-subtitle { color:#c9b8d6; font:12px/1.9 Arial,sans-serif; max-width:330px; margin:0 auto; }
-.intro-universe { width:min(76vw,330px); aspect-ratio:1; position:relative; margin:5px auto 10px; display:grid; place-items:center; }
-.intro-orbit { position:absolute; width:100%; height:31%; border:1px solid #ff70cb77; border-radius:50%; transform:rotate(-18deg); box-shadow:0 0 17px #f52bbd22,inset 0 0 15px #a735ff22; }
-.intro-orbit.orbit-two { width:85%; height:48%; transform:rotate(57deg); border-color:#b79aff66; animation: orbitSpin 12s linear infinite; }
-.intro-orbit.orbit-three { width:115%; height:24%; transform:rotate(28deg); border-color:#ffb0e344; animation: orbitSpin 17s linear infinite reverse; }
-.intro-heart { position:relative; font-size:clamp(105px,30vw,155px); line-height:1; color:#ff62bd;
-  filter:drop-shadow(0 0 10px #ff42b8) drop-shadow(0 0 28px #f020a5aa);
-  animation:introHeartBeat 2.2s ease-in-out infinite; }
-.intro-heart::after { content:""; position:absolute; inset:20% 14%; border-radius:50%; background:#ff58c8; filter:blur(35px); opacity:.23; z-index:-1; }
-.intro-ring-text { position:absolute; bottom:8%; width:100%; color:#ffb5e1; font:9px Arial,sans-serif; letter-spacing:4px; text-transform:uppercase; text-shadow:0 0 10px #ff4fa8; }
-.intro-enter { margin-top:24px; border:1px solid #ffb7df88; border-radius:999px; padding:14px 25px;
-  color:#fff7fc; background:linear-gradient(120deg,#ec4ca5,#8757d7); font:12px Arial,sans-serif; letter-spacing:1.4px;
-  box-shadow:0 0 28px #ed4ba544; cursor:pointer; transition:transform .2s,box-shadow .2s; }
-.intro-enter:active { transform:scale(.96); }
-.intro-foot { margin-top:14px; color:#85728f; font:9px Arial,sans-serif; letter-spacing:2px; }
-@keyframes introHeartBeat { 0%,100%{transform:scale(.94)} 50%{transform:scale(1.05)} }
-@keyframes orbitSpin { to { transform:rotate(342deg); } }
-@keyframes introStars { from{transform:translateY(0)} to{transform:translateY(-240px)} }
-@keyframes introNebula { from{transform:scale(1);opacity:.7} to{transform:scale(1.13);opacity:1} }
-@media (prefers-reduced-motion: reduce) {
-  #galaxy-intro *, #galaxy-intro::before, #galaxy-intro::after { animation-duration:30s !important; }
-}
-
+html.intro-lock,html.intro-lock body{overflow:hidden!important}
+#galaxy-intro{position:fixed;inset:0;z-index:20000;overflow:hidden;isolation:isolate;background:#020106;color:#fff5fc;text-align:center;display:flex;align-items:center;justify-content:center;padding:20px 16px;transition:opacity .9s ease,visibility .9s ease}
+#galaxy-intro:before{content:"";position:absolute;inset:-25%;z-index:-2;background:radial-gradient(ellipse at 50% 58%,#e6007730,transparent 28%),radial-gradient(ellipse at 50% 52%,#6d28a83b,transparent 47%),radial-gradient(ellipse at 20% 18%,#1d2e7130,transparent 35%);animation:nebulaBreathe 8s ease-in-out infinite alternate}
+#galaxy-intro.intro-leave{opacity:0;visibility:hidden;pointer-events:none}
+#galaxy-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.intro-content{width:min(100%,520px);position:relative;z-index:2;pointer-events:none;transition:opacity 1.2s ease,transform 1.2s ease}
+.intro-content>*{pointer-events:auto}
+.intro-kicker{font:10px/1.8 Arial,sans-serif;letter-spacing:4px;color:#ffd0ec;text-transform:uppercase;text-shadow:0 0 12px #ff36a6}
+.intro-title{margin:13px 0 8px;font:normal clamp(30px,8vw,52px)/1.13 Georgia,serif;text-shadow:0 0 22px #ff4fa877,0 3px 16px #000}
+.intro-title span{color:#ff86c6}
+.intro-subtitle{color:#f0d9eb;font:12px/1.8 Arial,sans-serif;max-width:340px;margin:0 auto;text-shadow:0 2px 9px #000}
+.intro-scene-label{font:9px Arial,sans-serif;letter-spacing:3px;color:#ffc2e7;margin:8px auto 0;text-shadow:0 0 12px #ff299f}
+.intro-enter{margin-top:15px;border:1px solid #ffb7df99;border-radius:999px;padding:14px 25px;color:#fff7fc;background:linear-gradient(120deg,#e82c91e8,#8150d9e8);font:11px Arial,sans-serif;letter-spacing:1.5px;box-shadow:0 0 30px #ed4ba566;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.intro-enter:active{transform:scale(.96)}
+.intro-foot{margin-top:12px;color:#c4a9c8;font:9px Arial,sans-serif;letter-spacing:2px;text-shadow:0 2px 8px #000}
+#galaxy-intro.scene-deep .intro-content{transform:translateY(-2%) scale(.88)}
+#galaxy-intro.scene-deep .intro-title{font-size:clamp(25px,6vw,42px)}
+@keyframes nebulaBreathe{from{transform:scale(1);opacity:.65}to{transform:scale(1.15);opacity:1}}
+@media(max-height:700px){.intro-universe{display:none}.intro-title{margin-top:7px}.intro-enter{margin-top:10px}.intro-subtitle{max-width:300px}}
+@media(prefers-reduced-motion:reduce){#galaxy-intro:before{animation:none}.intro-content{transition:none}}
 </style>
 </head>
 
 <body>
 
 <div id="galaxy-intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+  <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
   <div class="intro-content">
     <div class="intro-kicker">✦ un pequeño universo para ti ✦</div>
     <h1 class="intro-title" id="introTitle">Una galaxia<br>de <span>amor</span> para ti</h1>
     <p class="intro-subtitle">Di antara bintang yang tak terhitung, selalu ada satu nama yang bersinar paling istimewa.</p>
-    <div class="intro-universe" aria-hidden="true">
-      <div class="intro-orbit"></div><div class="intro-orbit orbit-two"></div><div class="intro-orbit orbit-three"></div>
-      <div class="intro-heart">♥</div>
-      <div class="intro-ring-text">SARIL ✦ KANAYA ✦ SARIL ✦ KANAYA</div>
-    </div>
-    <button class="intro-enter" id="introEnter" type="button">MASUK KE SEMESTA KITA&nbsp; ♡</button>
-    <div class="intro-foot">MADE WITH LOVE · JUST FOR YOU</div>
+    <div class="intro-scene-label">SARIL ✦ KANAYA · NUESTRO UNIVERSO ✦</div>
+    <button class="intro-enter" id="introEnter" type="button">ENTRAR A NUESTRO UNIVERSO&nbsp; ♡</button>
+    <div class="intro-foot">UN UNIVERSO HECHO PARA NOSOTROS · ♥</div>
   </div>
 </div>
 
@@ -1517,19 +1478,41 @@ Dari Saril, yang sedang mengirim rindu lewat kata-kata. ♡`));
 
 <script>
 (() => {
-  const intro = document.getElementById('galaxy-intro');
-  const enter = document.getElementById('introEnter');
-  if (!intro || !enter) return;
+  const intro=document.getElementById('galaxy-intro'), canvas=document.getElementById('galaxy-canvas'), enter=document.getElementById('introEnter');
+  if(!intro||!canvas||!enter)return;
   document.documentElement.classList.add('intro-lock');
-  const leaveIntro = () => {
-    intro.classList.add('intro-leave');
-    document.documentElement.classList.remove('intro-lock');
-    window.setTimeout(() => intro.remove(), 950);
-  };
-  enter.addEventListener('click', leaveIntro);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && intro && !intro.classList.contains('intro-leave')) leaveIntro();
-  });
+  const ctx=canvas.getContext('2d'); if(!ctx)return;
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w=0,h=0,dpr=1,raf=0,frame=0,deep=false;
+  const stars=[],heart=[],dust=[],labels=['HAPPY BIRTHDAY','SARIL ♥ KANAYA','ERES MAGIA ∞','MI UNIVERSO','TE QUIERO','♥ PARA SIEMPRE ♥'];
+  function rand(a,b){return a+Math.random()*(b-a)}
+  function resize(){w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,1.7);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);makeParticles()}
+  function makeParticles(){stars.length=heart.length=dust.length=0;const count=Math.min(260,Math.round(w*h/3300));for(let i=0;i<count;i++)stars.push({x:Math.random()*w,y:Math.random()*h,z:rand(.3,1),r:rand(.35,1.4),p:rand(0,6.28)});
+    // Point cloud shaped like a volumetric heart.
+    const hc=Math.min(2100,Math.round(w*h/190));for(let i=0;i<hc;i++){let t=Math.random()*Math.PI*2;let fill=Math.sqrt(Math.random());let x=16*Math.pow(Math.sin(t),3), y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);heart.push({x:x*fill,y:y*fill,z:rand(-1,1)*8,phase:rand(0,6.28),size:rand(.45,1.6),a:rand(.35,.95)})}
+    const dc=Math.min(3300,Math.round(w*h/115));for(let i=0;i<dc;i++){let a=Math.random()*Math.PI*2;let radius=Math.pow(Math.random(),.65);dust.push({a,r:radius,y:rand(-1,1),size:rand(.35,1.6),speed:rand(.12,.48),pink:Math.random()})}}
+  function glow(x,y,r,color,alpha){ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.shadowBlur=10;ctx.shadowColor=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.globalAlpha=1}
+  function draw(now){if(!document.getElementById('galaxy-canvas'))return;frame++;ctx.clearRect(0,0,w,h);const time=now*.00022, cx=w*.5, cy=h*(deep?.53:.57);const scale=Math.min(w/42,h/54)*(deep?1.35:.88);const beat=1+Math.sin(now*.0022)*.025;
+    // Deep black space and twinkling stars
+    for(const s of stars){let yy=(s.y+now*.006*s.z)%h;ctx.globalAlpha=.3+.55*(.5+.5*Math.sin(now*.0015+s.p));ctx.fillStyle=s.z>.75?'#fff4fd':'#e8a6ff';ctx.beginPath();ctx.arc(s.x,yy,s.r,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;
+    // Swirling pink particle galaxy disk, tilted into perspective.
+    ctx.save();ctx.translate(cx,cy+scale*5);ctx.rotate(-.08+Math.sin(time*.6)*.035);ctx.scale(1,.28);
+    for(const p of dust){const a=p.a+time*p.speed*(p.pink?1:-.7), rr=(12+Math.pow(p.r,1.25)*Math.min(w,h)*.38);const x=Math.cos(a)*rr,y=Math.sin(a)*rr;const pulse=.55+.45*Math.sin(a*3+time*4);glow(x,y,p.size*(.6+p.r),p.pink?'#ff248f':'#a34dff',.22+pulse*.42)}
+    // bright accretion ring
+    for(let i=0;i<230;i++){const a=i/230*Math.PI*2+time*1.6,rr=scale*(9+Math.sin(i*12.3)*.45);glow(Math.cos(a)*rr,Math.sin(a)*rr,rand(.35,.85),'#ff3cbb',.3)}ctx.restore();
+    // Three-dimensional particle heart, slowly rotating and breathing.
+    ctx.save();ctx.translate(cx,cy-scale*2);const rot=time*1.15;for(const p of heart){const x=p.x*Math.cos(rot)-p.z*Math.sin(rot)*.16;const z=p.x*Math.sin(rot)*.16+p.z*Math.cos(rot);const y=p.y;const perspective=1/(1+(z/95));const px=x*scale*.62*beat*perspective,py=-y*scale*.62*beat*perspective;const front=z>0;glow(px,py,p.size*(front?1.15:.8),front?'#ff4cb8':'#b52aff',p.a*(front?.82:.38))}ctx.restore();
+    // Floating words orbit around the galaxy like the video.
+    ctx.save();ctx.translate(cx,cy+scale*4);for(let i=0;i<labels.length;i++){const a=time*(i%2?-.24:.19)+i*Math.PI*2/labels.length;const rr=scale*(11.5+(i%3)*2.4);const x=Math.cos(a)*rr,y=Math.sin(a)*rr*.28;ctx.save();ctx.translate(x,y);ctx.rotate(Math.sin(a)*-.18);ctx.font=`bold ${Math.max(8,Math.min(12,w*.022))}px Arial`;ctx.textAlign='center';ctx.fillStyle=i%2?'#ff9cd9':'#ffd1ef';ctx.shadowColor='#ff2c9e';ctx.shadowBlur=12;ctx.globalAlpha=.65+.3*Math.sin(now*.001+i);ctx.fillText(labels[i],0,0);ctx.restore()}ctx.restore();
+    // small floating hearts
+    for(let i=0;i<10;i++){const a=time*(.35+i*.012)+i*2.4,rr=scale*(7+(i%4)*3);const x=cx+Math.cos(a)*rr,y=cy+Math.sin(a*1.3)*scale*7;ctx.globalAlpha=.45+.35*Math.sin(now*.002+i);ctx.fillStyle=i%2?'#ff6abf':'#ffb4e2';ctx.font=`${10+i%4*2}px serif`;ctx.fillText('♥',x,y)}ctx.globalAlpha=1;
+    raf=requestAnimationFrame(draw)}
+  function leave(){intro.classList.add('intro-leave');document.documentElement.classList.remove('intro-lock');cancelAnimationFrame(raf);setTimeout(()=>intro.remove(),950)}
+  enter.addEventListener('click',()=>{if(!deep){deep=true;intro.classList.add('scene-deep');enter.textContent='MASUK KE SEMESTA KITA ♡';return}leave()});
+  // After a short cinematic pause, let the particle universe become the main focus; the button remains usable.
+  setTimeout(()=>{if(intro.isConnected&&!deep){deep=true;intro.classList.add('scene-deep')}},2600);
+  document.addEventListener('keydown',e=>{if(e.key==='Enter'&&intro.isConnected){if(!deep){deep=true;intro.classList.add('scene-deep')}else leave()}});
+  addEventListener('resize',resize);resize();raf=requestAnimationFrame(draw);
 })();
 </script>
 
